@@ -2,10 +2,7 @@ import requests
 
 
 class RunMethod:
-    """docstring for RunMeth"""
-
-    def __init__(self, arg):
-        pass
+    """封装方法"""
 
     def post_main(self, url, data, header=None):
         res = None
@@ -24,7 +21,7 @@ class RunMethod:
 
     def run_main(self, method, url, data=None, header=None):
         res = None
-        if method == 'post':
+        if method.lower() == 'post':
             res = self.post_main(url, data, header)
         else:
             res = self.get_main(url, data, header)

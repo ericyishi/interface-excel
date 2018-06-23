@@ -3,7 +3,7 @@ from utils.operate_excel import OperationExcel
 from utils.operate_json import OperationJson
 
 
-class GetData(object):
+class GetData:
     """docstring for GetData"""
 
     def __init__(self):
@@ -14,8 +14,8 @@ class GetData(object):
         return self.opera_excel.get_lines()
 
     # 获取是否执行
-    def get_is_run(self, row, low):
-        col = excelColsConfig.get_run()
+    def get_is_run(self, row):
+        col = int(excelColsConfig.get_run())
         run_model = self.opera_excel.get_cell_vaule(row, col)
         flag = None
         if run_model == 'yes':
@@ -26,7 +26,7 @@ class GetData(object):
 
     # 是否携带header
     def is_header(self, row):
-        col = excelColsConfig.get_header()
+        col = int(excelColsConfig.get_header())
         header = self.opera_excel.get_cell_vaule(row, col)
         if header == 'yes':
             return excelColsConfig.get_header_value()
@@ -34,20 +34,20 @@ class GetData(object):
             return None
 
     # 获取请求方式
-    def data_request_method(self, row):
-        col = excelColsConfig.get_request_way()
+    def get_request_method(self, row):
+        col = int(excelColsConfig.get_run_way())
         requests_method = self.opera_excel.get_cell_vaule(row, col)
         return requests_method
 
     # 获取url
     def get_request_url(self, row):
-        col = excelColsConfig.get_url()
+        col = int(excelColsConfig.get_url())
         url = self.opera_excel.get_cell_vaule(row, col)
         return url
 
     # 获取请求数据
     def get_request_data(self, row):
-        col = excelColsConfig.get_data()
+        col = int(excelColsConfig.get_data())
         data = self.opera_excel.get_cell_vaule(row, col)
         if data == '':
             return None
@@ -63,7 +63,7 @@ class GetData(object):
 
     # 获取预期结果
     def get_expcet_data(self, row):
-        col = excelColsConfig.get_expect()
+        col = int(excelColsConfig.get_expect())
         expcet = self.opera_excel.get_cell_vaule(row, col)
         if expcet == '':
             return None
