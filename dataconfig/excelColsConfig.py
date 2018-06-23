@@ -1,5 +1,5 @@
 
-class global_var(object):
+class global_var:
     """将列名与列号匹配"""
     # case_id
     Id = '0'
@@ -82,7 +82,4 @@ def get_result():
 
 
 def get_header_value():
-    header = {
-        "header": "1234",
-        "cookie": "cody"
-    }
+    return global_var.header
