@@ -5,7 +5,7 @@
   |
  --- case
   |
- --- data 存在数据
+ --- data 存放数据
   |
  --- dataconfig
   |--excelRowsConfig.py文件行的数据的设置
@@ -32,3 +32,8 @@
 	    write_data.save(self.filename)
     ```
 
+### excel下的三个数据字段说明
+ * case依赖：当前case依赖于哪一个caseBefore
+ * 依赖的返回数据：需要caseBefore里面的哪个字段的数据
+   * 还需要考虑哪一层的哪一个字段【例如返回的数据有多个，需要的为第二个子集下面的name】
+ * 数据依赖字段：将caseBefore获取的数据作用于当前case的哪个字段下
