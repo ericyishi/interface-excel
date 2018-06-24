@@ -15,11 +15,11 @@ class RunMethod:
     def get_main(self, url, data=None, header=None):
         res = None
         if header != None:
-            res = requests.get(url=url, data=data, headers=header).json()
+            res = requests.get(url=url, data=data, headers=header,verify=False).json()
         else:
             res = requests.get(url=url, params=data).json()
 
-    def run_main(self, method, url, data=None, header=None):
+    def run_main(self, method, url, data=None, header=None,verify=False):
         res = None
         if method.lower() == 'post':
             res = self.post_main(url, data, header)

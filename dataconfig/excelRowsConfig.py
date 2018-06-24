@@ -69,3 +69,9 @@ class GetData:
             return None
         else:
             return expcet
+
+    # 封装写入数据的方法
+    def write_result(self,row,value):
+        # 获取实际结果的列
+        col = int(excelColsConfig.get_result())
+        self.opera_excel.write_value(row,col,value)
