@@ -18,7 +18,7 @@ class GetData:
         col = int(excelColsConfig.get_run())
         run_model = self.opera_excel.get_cell_vaule(row, col)
         flag = None
-        if run_model == 'yes':
+        if run_model.lower() == 'yes':
             flag = True
         else:
             flag = False
