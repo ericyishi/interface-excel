@@ -24,7 +24,7 @@ class RunTest:
             header=self.data.is_header(i)
             if is_run:
              print(method,is_run,url,header)
-             res=self.run_method.run_main(method,url,header)
+             res=self.run_method.run_main(method,url,data,header)
              if self.com_util.is_contain(expect,res):
                 print("测试通过")
                 self.data.write_result(i,"pass")
