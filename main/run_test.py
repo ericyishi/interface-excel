@@ -40,7 +40,7 @@ class RunTest:
                     self.data.write_result(i,"pass")
                 else:
                     print("测试失败")
-                    self.data.write_result(i,"error")
+                    self.data.write_result(i,res)
 
 if __name__=='__main__':
     run=RunTest()
