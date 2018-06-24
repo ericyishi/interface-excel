@@ -3,20 +3,19 @@
 ```
  --- base
   |
- --- case
-  |
  --- data 存放数据
-  |
+  |--case1.xml 用例
+  |--user.json 将请求的数据抽离出来
  --- dataconfig
   |--excelRowsConfig.py文件行的数据的设置
   |--excelColsConfig.py文件列的数据关联设置
  --- main 主流程
-  |
- --- report
-  |
+  |--run_test.py 入口文件
  --- utils 工具类
-  |--operate_excel 操作excel文件
-  |--operate_json 操作json文件
+  |--common_util.py 公用工具类
+  |--operate_excel.py 操作excel文件
+  |--operate_json.py 操作json文件
+  |--SendEmail.py 发送邮件
 ```
 ### 注意
 1. 向excel写入数据，不能直接使用xlrt，原来内容会被清除
@@ -37,3 +36,6 @@
  * 依赖的返回数据：取dependentcase返回相应数据里面的哪个字段的数据
    * 还需要考虑哪一层的哪一个字段【例如返回的数据有多个，需要的为第二个子集下面的name】
  * 数据依赖字段：将dependentcase获取的字段作用于当前case的哪个字段下
+ 
+### 待优化
+ * 异常处理
