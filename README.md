@@ -2,17 +2,18 @@
 ### 文件结构
 ```
  --- base
-  |
+  |--RunMethod.py 对Requests进行封装
  --- data 存放数据
   |--case1.xml 用例
   |--user.json 将请求的数据抽离出来
  --- dataconfig
-  |--excelRowsConfig.py文件行的数据的设置
-  |--excelColsConfig.py文件列的数据关联设置
+  |--dataconfig.py 对列字段进行封装
+  |--get_data.py 获取列里面的内容
+  |--dependCase.py 如有有依赖case进行单独处理
  --- main 主流程
   |--run_test.py 入口文件
  --- utils 工具类
-  |--common_util.py 公用工具类
+  |--common_util.py 公用工具类【断言】
   |--operate_excel.py 操作excel文件
   |--operate_json.py 操作json文件
   |--SendEmail.py 发送邮件
